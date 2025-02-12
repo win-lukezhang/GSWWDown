@@ -24,7 +24,7 @@ namespace GSWWDown
         private readonly string developerName = "Luke Zhang";
         private readonly string developerEmail = "lukez@lukezhang.win";        private readonly string developerGitHub = "https://github.com/win-lukezhang";
         private readonly string sourceCode= "https://github.com/win-lukezhang/GSWWDown";
-        private readonly string version = "1.0.1";
+        private readonly string version = "1.0.2";
         private readonly string copyright = "Copyright(C) 2025 Luke Zhang";
         private readonly string license = "GNU v3 License";
 
