@@ -1,4 +1,4 @@
-///     GSWWDown - A downloader for gushiwenwang.cn audio files.
+///     GSWWDown - A downloader for gushiwen.cn audio files.
 ///     Copyright(C) 2025 Luke Zhang
 
 ///     This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ namespace GSWWDown
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            WriteLog("");
+            WriteLog(string.Empty);
             WriteLog("古诗文网音频获取工具 启动成功");
         }
 
