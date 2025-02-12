@@ -49,7 +49,7 @@ namespace GSWWDown
             comboBox1.Items.Clear();
 
             string URL = textBox1.Text;
-            if (textBox1.Text.Length == 49)
+            if (textBox1.Text.Length == 49 && textBox1.Text.EndsWith(".aspx") && textBox1.Text.StartsWith("https://www.gushiwen.cn/shiwenv_"))
             {
                 WriteLog("开始获取可用的音频源");
                 string ID = GetID(URL);
