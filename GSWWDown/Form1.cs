@@ -24,7 +24,7 @@ namespace GSWWDown
         private readonly string developerName = "Luke Zhang";
         private readonly string developerEmail = "lukez@lukezhang.win";        private readonly string developerGitHub = "https://github.com/win-lukezhang";
         private readonly string sourceCode= "https://github.com/win-lukezhang/GSWWDown";
-        private readonly string version = "1.0.0";
+        private readonly string version = "1.0.1";
         private readonly string copyright = "Copyright(C) 2025 Luke Zhang";
         private readonly string license = "GNU v3 License";
 
@@ -209,7 +209,8 @@ namespace GSWWDown
         private async void button4_Click(object sender, EventArgs e)
         {
             string url = textBox3.Text;
-            string title = await GetTitleFromUrl(url);
+            string pageurl = textBox1.Text;
+            string title = await GetTitleFromUrl(pageurl);
 
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -262,7 +263,8 @@ namespace GSWWDown
         private async void button5_Click(object sender, EventArgs e)
         {
             string url = textBox3.Text;
-            string title = await GetTitleFromUrl(url);
+            string pageurl = textBox1.Text;
+            string title = await GetTitleFromUrl(pageurl);
 
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -279,11 +281,17 @@ namespace GSWWDown
 
                     if (string.IsNullOrWhiteSpace(idmPath))
                     {
+                        WriteLog("未输入 IDM 安装路径，将使用默认路径");
                         string programFilesX86 = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
                         idmPath = Path.Combine(programFilesX86, "Internet Download Manager", "IDMan.exe");
+                        WriteLog($"默认路径：{idmPath}");
+                    }
+                    else
+                    {
+                        WriteLog($"IDM 安装路径: {idmPath}");
                     }
 
-                    try
+                        try
                     {
                         // 使用 IDM 下载文件
                         var processStartInfo = new ProcessStartInfo
@@ -324,7 +332,8 @@ namespace GSWWDown
         private async void button6_Click(object sender, EventArgs e)
         {
             string url = textBox3.Text;
-            string title = await GetTitleFromUrl(url);
+            string pageurl = textBox1.Text;
+            string title = await GetTitleFromUrl(pageurl);
 
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -377,7 +386,8 @@ namespace GSWWDown
         private async void button7_Click(object sender, EventArgs e)
         {
             string url = textBox3.Text;
-            string title = await GetTitleFromUrl(url);
+            string pageurl = textBox1.Text;
+            string title = await GetTitleFromUrl(pageurl);
 
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
